@@ -10,23 +10,40 @@ public class Main {
 
         ArrayList<Integer> randNumbers = new ArrayList<>();
         fillArrayListWithRandomNumbers(randNumbers);
-        printAllRandomArrayListElements(randNumbers);
-
-        System.out.println("---------------------------------------------------");
 
         ArrayList<Integer> oddNumbers = new ArrayList<>();
         arrayListWithOddNumbers(oddNumbers, randNumbers);
-        oddNumbersPrintAllElements(oddNumbers);
-
-        System.out.println("---------------------------------------------------");
 
         ArrayList<Integer> evenNumbers = new ArrayList<>();
         arrayListWithEvenNumbers(evenNumbers, randNumbers);
-        printAllEvenNumbersArrayList(evenNumbers);
 
+        printElementsOfArrayList(randNumbers, oddNumbers, evenNumbers);
 
     }
+    public static void printElementsOfArrayList (ArrayList<Integer> randNumbers,
+                                                 ArrayList<Integer> oddNumbers,
+                                                 ArrayList<Integer> evenNumbers) {
+        int counterOdd = 1, counterEven = 1, counterAll = 1;
 
+        for(int i: randNumbers) {
+            System.out.println(counterAll + " number: " + i);
+            counterAll++;
+        }
+
+        System.out.println("---------------------------------------------------");
+
+        for (int i : oddNumbers) {
+            System.out.println(counterOdd + " number: " + i + " ");
+            counterOdd++;
+        }
+
+        System.out.println("---------------------------------------------------");
+
+        for (int i : evenNumbers) {
+            System.out.println(counterEven + " number: " + i);
+            counterEven++;
+        }
+    }
 
     public static void arrayListWithEvenNumbers(ArrayList<Integer> evenNumbers, ArrayList<Integer> randNumbers) {
         int counter = 0;
@@ -55,27 +72,4 @@ public class Main {
         }
     }
 
-    public static void printAllRandomArrayListElements(ArrayList<Integer> randNumbers) {
-        int counter = 1;
-        for(int i: randNumbers) {
-            System.out.println(counter + " number: " + i);
-            counter++;
-        }
-    }
-
-    public static void oddNumbersPrintAllElements(ArrayList<Integer> oddNumbers) {
-        int counter = 1;
-        for(int i: oddNumbers) {
-            System.out.println(counter + " number: " + i + " ");
-            counter++;
-        }
-    }
-
-    public static void printAllEvenNumbersArrayList(ArrayList<Integer> evenNumbers) {
-        int counter = 1;
-        for(int i: evenNumbers) {
-            System.out.println(counter + " number: " + i);
-            counter++;
-        }
-    }
 }
